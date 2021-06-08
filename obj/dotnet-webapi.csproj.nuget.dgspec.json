@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\joao2\\OneDrive\\Documentos\\dotnet api\\dotnet-webapi\\dotnet-webapi.csproj": {}
+    "C:\\Users\\joao2\\OneDrive\\Documentos\\dotnet_api\\dotnet-webapi\\dotnet-webapi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\joao2\\OneDrive\\Documentos\\dotnet api\\dotnet-webapi\\dotnet-webapi.csproj": {
+    "C:\\Users\\joao2\\OneDrive\\Documentos\\dotnet_api\\dotnet-webapi\\dotnet-webapi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\joao2\\OneDrive\\Documentos\\dotnet api\\dotnet-webapi\\dotnet-webapi.csproj",
+        "projectUniqueName": "C:\\Users\\joao2\\OneDrive\\Documentos\\dotnet_api\\dotnet-webapi\\dotnet-webapi.csproj",
         "projectName": "dotnet-webapi",
-        "projectPath": "C:\\Users\\joao2\\OneDrive\\Documentos\\dotnet api\\dotnet-webapi\\dotnet-webapi.csproj",
+        "projectPath": "C:\\Users\\joao2\\OneDrive\\Documentos\\dotnet_api\\dotnet-webapi\\dotnet-webapi.csproj",
         "packagesPath": "C:\\Users\\joao2\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\joao2\\OneDrive\\Documentos\\dotnet api\\dotnet-webapi\\obj\\",
+        "outputPath": "C:\\Users\\joao2\\OneDrive\\Documentos\\dotnet_api\\dotnet-webapi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -46,6 +46,14 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[5.0.6, )"
+            },
             "Microsoft.EntityFrameworkCore.InMemory": {
               "target": "Package",
               "version": "[5.0.6, )"

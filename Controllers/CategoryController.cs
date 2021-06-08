@@ -53,6 +53,60 @@ namespace dotnet_webapi.Controllers
             }
         }
 
+
+
+        [HttpPut]
+        [Route("{id:int}")]
+        public async Task<ActionResult<Category>> Put(
+            [FromServices] DataContext context,
+            int id,
+            [FromBody]Category model)
+        {
+            // Verifica se o ID informado é o mesmo do modelo
+            if (id != model.Id)
+                return NotFound(new { message = "Categoria não encontrada" });
+
+            // Verifica se os dados são válidos
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            try
+            {
+                context.Entry<Category>(model).State = EntityState.Modified;
+                await context.SaveChangesAsync();
+                return model;
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                return BadRequest(new { message = "Não foi possível atualizar a categoria" });
+
+            }
+        }
+
+        [HttpDelete]
+        [Route("{id:int}")]
+ 
+        public async Task<ActionResult<Category>> Delete(
+            [FromServices] DataContext context,
+            int id)
+        {
+            var category = await context.Category.FirstOrDefaultAsync(x => x.Id == id);
+            if (category == null)
+                return NotFound(new { message = "Categoria não encontrada" });
+
+            try
+            {
+                context.Category.Remove(category);
+                await context.SaveChangesAsync();
+                return category;
+            }
+            catch (Exception)
+            {
+                return BadRequest(new { message = "Não foi possível remover a categoria" });
+
+            }
+        }
+
     }
 
 

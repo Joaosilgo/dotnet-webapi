@@ -14,6 +14,10 @@ namespace dotnet_webapi.Data
         public DbSet<Business> Business { get; set; }
         public DbSet<Category> Category { get; set; }
 
+        public DbSet<User> User { get; set; }
+
+       
+
 
     }
 }

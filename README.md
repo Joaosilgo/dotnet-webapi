@@ -2,6 +2,9 @@
 
 ````bash
 dotnet add dotnet-webapi  package Microsoft.EntityFrameworkCore.InMemory --version 5.0.6
+dotnet add package Microsoft.AspNetCore.Authentication
+dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer
+
 
 ````
 
@@ -36,4 +39,5 @@ git commit -m "first commit"
 git branch -M main
 git remote add origin https://github.com/Joaosilgo/dotnet-webapi.git
 git push -u origin main
+
 ````

@@ -51,7 +51,22 @@ namespace dotnet_webapi.Data
             }
             context.SaveChanges();
 
-          
+
+            var users = new User[]
+           {
+           new User { Id = 1, Username = "batman", Password = "batman", Role = "manager" },
+           new User { Id = 2, Username = "robin", Password = "robin", Role = "employee" }
+           };
+            foreach (User u in users)
+            {
+                context.User.Add(u);
+            }
+            context.SaveChanges();
+
+
+
+
+
         }
     }
 }
