@@ -2,6 +2,45 @@
   "version": 3,
   "targets": {
     "net5.0": {
+      "Google.Apis/1.52.0": {
+        "type": "package",
+        "dependencies": {
+          "Google.Apis.Core": "1.52.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Google.Apis.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Google.Apis.dll": {}
+        }
+      },
+      "Google.Apis.Auth/1.52.0": {
+        "type": "package",
+        "dependencies": {
+          "Google.Apis": "1.52.0",
+          "Google.Apis.Core": "1.52.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Google.Apis.Auth.PlatformServices.dll": {},
+          "lib/netstandard2.0/Google.Apis.Auth.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Google.Apis.Auth.PlatformServices.dll": {},
+          "lib/netstandard2.0/Google.Apis.Auth.dll": {}
+        }
+      },
+      "Google.Apis.Core/1.52.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.3"
+        },
+        "compile": {
+          "lib/netstandard2.0/Google.Apis.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Google.Apis.Core.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Authentication/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -47,6 +86,18 @@
         "runtime": {
           "lib/netstandard2.0/Microsoft.AspNetCore.Authentication.Core.dll": {}
         }
+      },
+      "Microsoft.AspNetCore.Authentication.Google/5.0.7": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/Microsoft.AspNetCore.Authentication.Google.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/Microsoft.AspNetCore.Authentication.Google.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       },
       "Microsoft.AspNetCore.Authentication.JwtBearer/5.0.6": {
         "type": "package",
@@ -538,6 +589,15 @@
           }
         }
       },
+      "Newtonsoft.Json/12.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
       "Swashbuckle.AspNetCore/5.6.3": {
         "type": "package",
         "dependencies": {
@@ -752,6 +812,80 @@
     }
   },
   "libraries": {
+    "Google.Apis/1.52.0": {
+      "sha512": "5YWTBzHuNUiYIUoIBkCGYMokyYuaOuAn+w96lIJ2WNqeiAurKq3ZLqZ86fYae32PDWHZa+itFYc9O1iVfYi5dQ==",
+      "type": "package",
+      "path": "google.apis/1.52.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "NuGetIcon.png",
+        "google.apis.1.52.0.nupkg.sha512",
+        "google.apis.nuspec",
+        "lib/net45/Google.Apis.PlatformServices.dll",
+        "lib/net45/Google.Apis.dll",
+        "lib/net45/Google.Apis.pdb",
+        "lib/net45/Google.Apis.xml",
+        "lib/netstandard1.3/Google.Apis.dll",
+        "lib/netstandard1.3/Google.Apis.pdb",
+        "lib/netstandard1.3/Google.Apis.xml",
+        "lib/netstandard2.0/Google.Apis.dll",
+        "lib/netstandard2.0/Google.Apis.pdb",
+        "lib/netstandard2.0/Google.Apis.xml"
+      ]
+    },
+    "Google.Apis.Auth/1.52.0": {
+      "sha512": "T7JKjq4zmk8b4lrOn+kyatgDQdLytoV+i6Fw4agyWlm4Q+bbZbu3DcCz+UuliEtXHbShgHD1PWfiMJoQGuPEog==",
+      "type": "package",
+      "path": "google.apis.auth/1.52.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "NuGetIcon.png",
+        "google.apis.auth.1.52.0.nupkg.sha512",
+        "google.apis.auth.nuspec",
+        "lib/net45/Google.Apis.Auth.PlatformServices.dll",
+        "lib/net45/Google.Apis.Auth.dll",
+        "lib/net45/Google.Apis.Auth.pdb",
+        "lib/net45/Google.Apis.Auth.xml",
+        "lib/net461/Google.Apis.Auth.PlatformServices.dll",
+        "lib/net461/Google.Apis.Auth.dll",
+        "lib/net461/Google.Apis.Auth.pdb",
+        "lib/net461/Google.Apis.Auth.xml",
+        "lib/netstandard1.3/Google.Apis.Auth.PlatformServices.dll",
+        "lib/netstandard1.3/Google.Apis.Auth.dll",
+        "lib/netstandard1.3/Google.Apis.Auth.pdb",
+        "lib/netstandard1.3/Google.Apis.Auth.xml",
+        "lib/netstandard2.0/Google.Apis.Auth.PlatformServices.dll",
+        "lib/netstandard2.0/Google.Apis.Auth.dll",
+        "lib/netstandard2.0/Google.Apis.Auth.pdb",
+        "lib/netstandard2.0/Google.Apis.Auth.xml"
+      ]
+    },
+    "Google.Apis.Core/1.52.0": {
+      "sha512": "cgQpnZ9IC5SBNsAFTXHKUMB8bOkBWPLtXcLgwSYkV8oL0FfUdHwrDzH5qrf/mFB9fQIPgJyV6tdUwf2hu1UJ+A==",
+      "type": "package",
+      "path": "google.apis.core/1.52.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "NuGetIcon.png",
+        "google.apis.core.1.52.0.nupkg.sha512",
+        "google.apis.core.nuspec",
+        "lib/net45/Google.Apis.Core.dll",
+        "lib/net45/Google.Apis.Core.pdb",
+        "lib/net45/Google.Apis.Core.xml",
+        "lib/netstandard1.3/Google.Apis.Core.dll",
+        "lib/netstandard1.3/Google.Apis.Core.pdb",
+        "lib/netstandard1.3/Google.Apis.Core.xml",
+        "lib/netstandard2.0/Google.Apis.Core.dll",
+        "lib/netstandard2.0/Google.Apis.Core.pdb",
+        "lib/netstandard2.0/Google.Apis.Core.xml"
+      ]
+    },
     "Microsoft.AspNetCore.Authentication/2.2.0": {
       "sha512": "b0R9X7L6zMqNsssKDvhYHuNi5x0s4DyHTeXybIAyGaitKiW1Q5aAGKdV2codHPiePv9yHfC9hAMyScXQ/xXhPw==",
       "type": "package",
@@ -789,6 +923,21 @@
         "lib/netstandard2.0/Microsoft.AspNetCore.Authentication.Core.xml",
         "microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",
         "microsoft.aspnetcore.authentication.core.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Authentication.Google/5.0.7": {
+      "sha512": "LsI/AjzQDtJLSU/osWfIOSMT5JrOOphX0MXRJ4piMzrKOcqUzvXY4jbb7o59fsyQTyDz13eH70qKvqbMwXF6qw==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.authentication.google/5.0.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net5.0/Microsoft.AspNetCore.Authentication.Google.dll",
+        "lib/net5.0/Microsoft.AspNetCore.Authentication.Google.xml",
+        "microsoft.aspnetcore.authentication.google.5.0.7.nupkg.sha512",
+        "microsoft.aspnetcore.authentication.google.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Authentication.JwtBearer/5.0.6": {
@@ -1494,6 +1643,37 @@
         "version.txt"
       ]
     },
+    "Newtonsoft.Json/12.0.3": {
+      "sha512": "6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
+      "type": "package",
+      "path": "newtonsoft.json/12.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.12.0.3.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
+      ]
+    },
     "Swashbuckle.AspNetCore/5.6.3": {
       "sha512": "UkL9GU0mfaA+7RwYjEaBFvAzL8qNQhNqAeV5uaWUu/Z+fVgvK9FHkGCpTXBqSQeIHuZaIElzxnLDdIqGzuCnVg==",
       "type": "package",
@@ -1992,7 +2172,9 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "Google.Apis.Auth >= 1.52.0",
       "Microsoft.AspNetCore.Authentication >= 2.2.0",
+      "Microsoft.AspNetCore.Authentication.Google >= 5.0.7",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 5.0.6",
       "Microsoft.EntityFrameworkCore.InMemory >= 5.0.6",
       "Swashbuckle.AspNetCore >= 5.6.3"
@@ -2045,9 +2227,17 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
+          "Google.Apis.Auth": {
+            "target": "Package",
+            "version": "[1.52.0, )"
+          },
           "Microsoft.AspNetCore.Authentication": {
             "target": "Package",
             "version": "[2.2.0, )"
+          },
+          "Microsoft.AspNetCore.Authentication.Google": {
+            "target": "Package",
+            "version": "[5.0.7, )"
           },
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
             "target": "Package",

@@ -73,3 +73,11 @@ C:\Users\joao2\OneDrive\Documentos\dotnet_api\dotnet-webapi\obj\Debug\net5.0\dot
 C:\Users\joao2\OneDrive\Documentos\dotnet_api\dotnet-webapi\obj\Debug\net5.0\ref\dotnet-webapi.dll
 C:\Users\joao2\OneDrive\Documentos\dotnet_api\dotnet-webapi\obj\Debug\net5.0\dotnet-webapi.pdb
 C:\Users\joao2\OneDrive\Documentos\dotnet_api\dotnet-webapi\obj\Debug\net5.0\dotnet-webapi.genruntimeconfig.cache
+C:\Users\joao2\OneDrive\Documentos\dotnet_api\dotnet-webapi\bin\Debug\net5.0\dotnet-webapi.xml
+C:\Users\joao2\OneDrive\Documentos\dotnet_api\dotnet-webapi\obj\Debug\net5.0\dotnet-webapi.xml
+C:\Users\joao2\OneDrive\Documentos\dotnet_api\dotnet-webapi\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.Google.dll
+C:\Users\joao2\OneDrive\Documentos\dotnet_api\dotnet-webapi\bin\Debug\net5.0\Google.Apis.dll
+C:\Users\joao2\OneDrive\Documentos\dotnet_api\dotnet-webapi\bin\Debug\net5.0\Google.Apis.Auth.PlatformServices.dll
+C:\Users\joao2\OneDrive\Documentos\dotnet_api\dotnet-webapi\bin\Debug\net5.0\Google.Apis.Auth.dll
+C:\Users\joao2\OneDrive\Documentos\dotnet_api\dotnet-webapi\bin\Debug\net5.0\Google.Apis.Core.dll
+C:\Users\joao2\OneDrive\Documentos\dotnet_api\dotnet-webapi\bin\Debug\net5.0\Newtonsoft.Json.dll

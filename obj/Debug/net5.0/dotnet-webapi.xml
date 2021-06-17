@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>dotnet-webapi</name>
+    </assembly>
+    <members>
+        <member name="M:dotnet_webapi.Controllers.DefaultController.Get">
+            <summary>
+            Dá-nos a informação de todos os endpoints da API
+            </summary>
+            <returns>Objeto contendo valores url de todos os EndPoints.</returns>
+        </member>
+        <member name="M:dotnet_webapi.Controllers.UserController.Authenticate(dotnet_webapi.Models.User,dotnet_webapi.Data.DataContext)">
+            <summary>
+            POST- Login in the system
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
