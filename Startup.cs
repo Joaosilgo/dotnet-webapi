@@ -73,6 +73,11 @@ namespace dotnet_webapi
                         Email = "joaosilgo96@gmail.com",
                         Url = new Uri("https://github.com/Joaosilgo")
                     },
+                    License = new OpenApiLicense
+                    {
+                        Name = "Use under MIT License",
+                        Url = new Uri("https://github.com/Joaosilgo/dotnet-webapi/blob/main/LICENSE"),
+                    }
                 });
 
 
