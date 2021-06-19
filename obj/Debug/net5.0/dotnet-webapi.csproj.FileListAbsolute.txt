@@ -96,3 +96,6 @@ C:\Users\joao2\OneDrive\Documentos\dotnet_api\dotnet-webapi\bin\Debug\net5.0\pt-
 C:\Users\joao2\OneDrive\Documentos\dotnet_api\dotnet-webapi\bin\Debug\net5.0\pt\Hangfire.Core.resources.dll
 C:\Users\joao2\OneDrive\Documentos\dotnet_api\dotnet-webapi\bin\Debug\net5.0\zh-TW\Hangfire.Core.resources.dll
 C:\Users\joao2\OneDrive\Documentos\dotnet_api\dotnet-webapi\bin\Debug\net5.0\zh\Hangfire.Core.resources.dll
+C:\Users\joao2\OneDrive\Documentos\dotnet_api\dotnet-webapi\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\joao2\OneDrive\Documentos\dotnet_api\dotnet-webapi\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\joao2\OneDrive\Documentos\dotnet_api\dotnet-webapi\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll

@@ -47,7 +47,12 @@ namespace dotnet_webapi
             );
             services.AddHangfireServer();
 
-            services.AddControllers();
+            // services.AddControllers();
+            services.AddControllers(options =>
+            {
+                options.RespectBrowserAcceptHeader = true; // false by default~
+
+            }).AddNewtonsoftJson();
 
             //services.AddCors();
             services.AddCors(c =>
@@ -104,6 +109,11 @@ namespace dotnet_webapi
                     Array.Empty<string>()
                 }
             });
+
+
+
+                //Custoom JsonPatch
+                c.DocumentFilter<JsonPatchDocumentFilter>();
 
                 foreach (var filePath in System.IO.Directory.GetFiles(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)), "*.xml"))
                 {

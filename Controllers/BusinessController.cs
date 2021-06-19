@@ -15,6 +15,10 @@ namespace dotnet_webapi.Controllers
     [EnableCors]
     public class BusinessController : ControllerBase
     {
+        /// <summary>
+        /// Get all Business.
+        /// </summary>
+        /// <returns>All Business in Db</returns>
         [HttpGet]
         [Route("")]
         [AllowAnonymous]
@@ -24,6 +28,11 @@ namespace dotnet_webapi.Controllers
             return business;
         }
 
+        /// <summary>
+        /// GetById a specific Business.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <param name="id"></param>        
         [HttpGet]
         [Route("{id:int}")]
         [AllowAnonymous]
@@ -33,6 +42,11 @@ namespace dotnet_webapi.Controllers
             return business;
         }
 
+        /// <summary>
+        /// GetById a specific Category.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <param name="id"></param>   
         [HttpGet]
         [Route("categories/{id:int}")]
         [AllowAnonymous]
@@ -42,6 +56,26 @@ namespace dotnet_webapi.Controllers
             return business;
         }
 
+        /// <summary>
+        /// Creates a Business.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     POST /Business
+        ///     {
+        ///         "name": "It´s Something 🌮",
+        ///         "description": "Some Description Such Wow",
+        ///         "mobilePhone": "+351 964 575 619",
+        ///         "categoryId": 1
+        ///     }
+        ///
+        /// </remarks>
+        /// <param name="context"></param>
+        /// <param name="model"></param>
+        /// <returns>A newly created TodoItem</returns>
+        /// <response code="201">Returns the newly created item</response>
+        /// <response code="400">If the item is null</response> 
         [HttpPost]
         [Route("")]
         public async Task<ActionResult<Business>> Post(

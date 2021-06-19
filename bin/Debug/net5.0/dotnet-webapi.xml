@@ -4,6 +4,64 @@
         <name>dotnet-webapi</name>
     </assembly>
     <members>
+        <member name="M:dotnet_webapi.Controllers.BusinessController.Get(dotnet_webapi.Data.DataContext)">
+            <summary>
+            Get all Business.
+            </summary>
+            <returns>All Business in Db</returns>
+        </member>
+        <member name="M:dotnet_webapi.Controllers.BusinessController.GetById(dotnet_webapi.Data.DataContext,System.Int32)">
+            <summary>
+            GetById a specific Business.
+            </summary>
+            <param name="context"></param>
+            <param name="id"></param>        
+        </member>
+        <member name="M:dotnet_webapi.Controllers.BusinessController.GetByCategory(dotnet_webapi.Data.DataContext,System.Int32)">
+            <summary>
+            GetById a specific Category.
+            </summary>
+            <param name="context"></param>
+            <param name="id"></param>   
+        </member>
+        <member name="M:dotnet_webapi.Controllers.BusinessController.Post(dotnet_webapi.Data.DataContext,dotnet_webapi.Models.Business)">
+             <summary>
+             Creates a Business.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 POST /Business
+                 {
+                     "name": "It´s Something 🌮",
+                     "description": "Some Description Such Wow",
+                     "mobilePhone": "+351 964 575 619",
+                     "categoryId": 1
+                 }
+            
+             </remarks>
+             <param name="context"></param>
+             <param name="model"></param>
+             <returns>A newly created TodoItem</returns>
+             <response code="201">Returns the newly created item</response>
+             <response code="400">If the item is null</response> 
+        </member>
+        <member name="M:dotnet_webapi.Controllers.CategoryController.Patch(System.Int32,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{dotnet_webapi.Models.Category})">
+             <summary>
+             Path Example in Category.
+             </summary>
+             <remarks>
+             Sample request:
+            
+             {
+                 "op":"replace",
+                 "path":"Name",
+                 "value":"Its Something🌮"
+             }
+            
+             </remarks>
+             <param name="categoryPatch"></param> 
+        </member>
         <member name="M:dotnet_webapi.Controllers.DefaultController.Get">
             <summary>
             Dá-nos a informação de todos os endpoints da API
