@@ -12,6 +12,7 @@ using dotnet_webapi.Repositories;
 using dotnet_webapi.Services;
 using Google.Apis.Auth;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 
@@ -21,16 +22,17 @@ using Microsoft.Extensions.Configuration;
 namespace dotnet_webapi.Controllers
 {
     [Route("v1/account")]
+    [EnableCors]
     public class UserController : Controller
     {
 
-           public class AuthenticateRequest
+        public class AuthenticateRequest
         {
             [Required]
             public string IdToken { get; set; }
         }
 
-         private readonly JwtGenerator _jwtGenerator;
+        private readonly JwtGenerator _jwtGenerator;
 
         public UserController(IConfiguration configuration)
         {
@@ -60,6 +62,7 @@ namespace dotnet_webapi.Controllers
         [HttpPost]
         [Route("login")]
         [AllowAnonymous]
+        [EnableCors]
         public async Task<ActionResult<dynamic>> Authenticate([FromBody] User model, [FromServices] DataContext context)
         {
             // Recupera o usuário

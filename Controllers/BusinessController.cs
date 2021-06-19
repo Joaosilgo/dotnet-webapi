@@ -5,16 +5,17 @@ using System.Threading.Tasks;
 using dotnet_webapi.Data;
 using dotnet_webapi.Models;
 using Microsoft.AspNetCore.Authorization;
-
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace dotnet_webapi.Controllers
 {
     [Route("v1/business")]
+    [EnableCors]
     public class BusinessController : ControllerBase
     {
-         [HttpGet]
+        [HttpGet]
         [Route("")]
         [AllowAnonymous]
         public async Task<ActionResult<List<Business>>> Get([FromServices] DataContext context)
@@ -45,7 +46,7 @@ namespace dotnet_webapi.Controllers
         [Route("")]
         public async Task<ActionResult<Business>> Post(
             [FromServices] DataContext context,
-            [FromBody]Business model)
+            [FromBody] Business model)
         {
             if (ModelState.IsValid)
             {

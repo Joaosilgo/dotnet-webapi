@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using dotnet_webapi.Data;
 using dotnet_webapi.Models;
 using Microsoft.AspNetCore.Authorization;
-
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,6 +12,7 @@ namespace dotnet_webapi.Controllers
 {
 
     [Route("v1/categories")]
+    [EnableCors]
     public class CategoryController : ControllerBase
     {
         [Route("")]
@@ -34,7 +35,7 @@ namespace dotnet_webapi.Controllers
         [HttpPost]
         [Route("")]
         [AllowAnonymous]
-        public async Task<ActionResult<Category>> Post([FromServices] DataContext context,[FromBody] Category model)
+        public async Task<ActionResult<Category>> Post([FromServices] DataContext context, [FromBody] Category model)
         {
             // Verifica se os dados são válidos
             if (!ModelState.IsValid)
@@ -60,7 +61,7 @@ namespace dotnet_webapi.Controllers
         public async Task<ActionResult<Category>> Put(
             [FromServices] DataContext context,
             int id,
-            [FromBody]Category model)
+            [FromBody] Category model)
         {
             // Verifica se o ID informado é o mesmo do modelo
             if (id != model.Id)
@@ -85,7 +86,7 @@ namespace dotnet_webapi.Controllers
 
         [HttpDelete]
         [Route("{id:int}")]
- 
+
         public async Task<ActionResult<Category>> Delete(
             [FromServices] DataContext context,
             int id)

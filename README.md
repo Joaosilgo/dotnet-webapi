@@ -1,5 +1,7 @@
 # 🌮 DOTNET API
 
+![Info](https://images.unsplash.com/photo-1623282033815-40b05d96c903?ixid=MnwyMjIwNDh8MHwxfGNvbGxlY3Rpb258MXwzY1hKR09YdkpZOHx8fHx8Mnx8MTYyNDEyMzM5MQ&ixlib=rb-1.2.1)
+
 ````bash
 dotnet add dotnet-webapi  package Microsoft.EntityFrameworkCore.InMemory --version 5.0.6
 dotnet add package Microsoft.AspNetCore.Authentication
@@ -19,6 +21,8 @@ dotnet add package Hangfire.MemoryStorage --version 1.7.0
 
 ## Swagger
 
+## TO-DO
+
 - [x] In-memory database provider for Entity Framework Core (to be used for testing purposes)
 - [x] Setting up Swagger (.NET Core) using the Authorization headers (Bearer)
 - [x] Autenticação e Autorização via Token (Bearer e JWT)
@@ -26,6 +30,7 @@ dotnet add package Hangfire.MemoryStorage --version 1.7.0
 - [x] IncludeXmlComments in Swagger
 - [x] Hangfire Core to perform background processing/tasks and Jobs
 - [x] Override IDashboardAuthorizationFilter to CustomAuthorizationFilter to Return Hangfire DashBoard in Production (It was Protected By default)
+- [x] [EnableCors] To Solve the Proble with Cors Policy
 - [ ] Contact the media
   
 ## Docker

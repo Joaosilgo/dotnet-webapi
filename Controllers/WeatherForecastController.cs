@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -9,6 +10,7 @@ namespace dotnet_webapi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [EnableCors]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
@@ -24,7 +26,7 @@ namespace dotnet_webapi.Controllers
         }
 
         [HttpGet]
-     //   [Route("/")]
+        //   [Route("/")]
         public IEnumerable<WeatherForecast> Get()
         {
             var rng = new Random();

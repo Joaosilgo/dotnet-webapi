@@ -174,7 +174,7 @@ namespace dotnet_webapi
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IBackgroundJobClient backgroundJobClient)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IBackgroundJobClient backgroundJobClient, IRecurringJobManager recurringJobManager)
         {
             if (env.IsDevelopment())
             {
@@ -184,7 +184,9 @@ namespace dotnet_webapi
             }
 
             //  app.UseHangfireDashboard();
-            // backgroundJobClient.Enqueue(() => Console.WriteLine("Hello Hangfire Job!!"));
+
+
+
 
 
             app.UseSwagger();
@@ -225,6 +227,11 @@ namespace dotnet_webapi
                 });
 
             });
+
+
+            backgroundJobClient.Enqueue(() => Console.WriteLine("This is  Hangfire Job!! :)"));
+            // 
+            recurringJobManager.AddOrUpdate("Run Every Minute", () => Console.WriteLine("This is Recurring Hangfire Job!! :)"), Cron.Daily);
         }
     }
 }
