@@ -35,6 +35,8 @@ dotnet add package Hangfire.MemoryStorage --version 1.7.0
   
 ## Docker
 
+![Docker](https://images.unsplash.com/photo-1520218750893-2be45c7cbf63?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMjIwNDh8MHwxfGNvbGxlY3Rpb258MXwzY1hKR09YdkpZOHx8fHx8Mnx8MTYyNDEyMzc0NQ&ixlib=rb-1.2.1&q=80&w=400)
+
 Create a Dockerfile or generate in CRL+P Add Docker Compose
 
 ````bash
