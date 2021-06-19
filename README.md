@@ -1,5 +1,7 @@
 # 🌮 DOTNET API
 
+___
+
 ![Info](https://images.unsplash.com/photo-1623282033815-40b05d96c903?ixid=MnwyMjIwNDh8MHwxfGNvbGxlY3Rpb258MXwzY1hKR09YdkpZOHx8fHx8Mnx8MTYyNDEyMzM5MQ&ixlib=rb-1.2.1)
 
 ````bash
@@ -13,6 +15,8 @@ dotnet add package Hangfire.MemoryStorage --version 1.7.0
 
 ````
 
+___
+
 ## In-memory database provider for Entity Framework Core (to be used for testing purposes)
 
 ## Postman
@@ -21,7 +25,11 @@ dotnet add package Hangfire.MemoryStorage --version 1.7.0
 
 ## Swagger
 
+___
+
 ## TO-DO
+
+![To DO](https://images.unsplash.com/photo-1512758017271-d7b84c2113f1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMjIwNDh8MHwxfGNvbGxlY3Rpb258MXwzY1hKR09YdkpZOHx8fHx8Mnx8MTYyNDEyNDIyOA&ixlib=rb-1.2.1&q=80&w=1080)
 
 - [x] In-memory database provider for Entity Framework Core (to be used for testing purposes)
 - [x] Setting up Swagger (.NET Core) using the Authorization headers (Bearer)
@@ -33,6 +41,8 @@ dotnet add package Hangfire.MemoryStorage --version 1.7.0
 - [x] [EnableCors] To Solve the Proble with Cors Policy
 - [ ] Contact the media
   
+  ___
+
 ## Docker
 
 ![Docker](https://images.unsplash.com/photo-1520218750893-2be45c7cbf63?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMjIwNDh8MHwxfGNvbGxlY3Rpb258MXwzY1hKR09YdkpZOHx8fHx8Mnx8MTYyNDEyMzc0NQ&ixlib=rb-1.2.1&q=80&w=400)
@@ -53,6 +63,8 @@ In Dockerfile change:
 # Opção utilizada pelo Heroku
 CMD ASPNETCORE_URLS=http://*:$PORT dotnet <app-name>.dll
 ````
+
+___
 
 ## Deploy Heroku
 
@@ -88,6 +100,10 @@ git remote add origin https://github.com/Joaosilgo/dotnet-webapi.git
 git push -u origin main
 
 ````
+
+___
+
+## Testing
 
 ## Log Problems
 
