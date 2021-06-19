@@ -34,6 +34,9 @@
       "dotnet-webapi/1.0.0": {
         "dependencies": {
           "Google.Apis.Auth": "1.52.0",
+          "Hangfire.AspNetCore": "1.7.23",
+          "Hangfire.Core": "1.7.23",
+          "Hangfire.MemoryStorage": "1.7.0",
           "Microsoft.AspNetCore.Authentication": "2.2.0",
           "Microsoft.AspNetCore.Authentication.Google": "5.0.7",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "5.0.6",
@@ -374,6 +377,86 @@
         },
         "compile": {
           "lib/netstandard2.0/Google.Apis.Core.dll": {}
+        }
+      },
+      "Hangfire.AspNetCore/1.7.23": {
+        "dependencies": {
+          "Hangfire.Core": "1.7.23"
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Hangfire.AspNetCore.dll": {
+            "assemblyVersion": "1.7.23.0",
+            "fileVersion": "1.7.23.0"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Hangfire.AspNetCore.dll": {}
+        }
+      },
+      "Hangfire.Core/1.7.23": {
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Hangfire.Core.dll": {
+            "assemblyVersion": "1.7.23.0",
+            "fileVersion": "1.7.23.0"
+          }
+        },
+        "resources": {
+          "lib/netstandard2.0/ca/Hangfire.Core.resources.dll": {
+            "locale": "ca"
+          },
+          "lib/netstandard2.0/de/Hangfire.Core.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netstandard2.0/es/Hangfire.Core.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netstandard2.0/fa/Hangfire.Core.resources.dll": {
+            "locale": "fa"
+          },
+          "lib/netstandard2.0/fr/Hangfire.Core.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/netstandard2.0/nb/Hangfire.Core.resources.dll": {
+            "locale": "nb"
+          },
+          "lib/netstandard2.0/nl/Hangfire.Core.resources.dll": {
+            "locale": "nl"
+          },
+          "lib/netstandard2.0/pt-BR/Hangfire.Core.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/netstandard2.0/pt-PT/Hangfire.Core.resources.dll": {
+            "locale": "pt-PT"
+          },
+          "lib/netstandard2.0/pt/Hangfire.Core.resources.dll": {
+            "locale": "pt"
+          },
+          "lib/netstandard2.0/zh-TW/Hangfire.Core.resources.dll": {
+            "locale": "zh-TW"
+          },
+          "lib/netstandard2.0/zh/Hangfire.Core.resources.dll": {
+            "locale": "zh"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Hangfire.Core.dll": {}
+        }
+      },
+      "Hangfire.MemoryStorage/1.7.0": {
+        "dependencies": {
+          "Hangfire.Core": "1.7.23"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Hangfire.MemoryStorage.dll": {
+            "assemblyVersion": "1.7.0.0",
+            "fileVersion": "1.7.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard1.3/Hangfire.MemoryStorage.dll": {}
         }
       },
       "Microsoft.AspNetCore.Authentication/2.2.0": {
@@ -2533,6 +2616,27 @@
       "sha512": "sha512-cgQpnZ9IC5SBNsAFTXHKUMB8bOkBWPLtXcLgwSYkV8oL0FfUdHwrDzH5qrf/mFB9fQIPgJyV6tdUwf2hu1UJ+A==",
       "path": "google.apis.core/1.52.0",
       "hashPath": "google.apis.core.1.52.0.nupkg.sha512"
+    },
+    "Hangfire.AspNetCore/1.7.23": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5QDeQ8CaEljLlKvlMO6cdlgfKhiz9fmziSDW1576xDVdHZkuMWK+r8F/iPO6pEJqazBVcL9vmL6ulyTlvdauMw==",
+      "path": "hangfire.aspnetcore/1.7.23",
+      "hashPath": "hangfire.aspnetcore.1.7.23.nupkg.sha512"
+    },
+    "Hangfire.Core/1.7.23": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ekiwguo5KcBqiUTJ89kTutthhQEneWw0Qo/b9Z8uSoVqETQl2eV2F+6IlVECIRp2HsgIR4aOOaNdj3Cch7E3ng==",
+      "path": "hangfire.core/1.7.23",
+      "hashPath": "hangfire.core.1.7.23.nupkg.sha512"
+    },
+    "Hangfire.MemoryStorage/1.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-g4hBdD8CaePScNWDOtRlR0GCxRyCK3KaItPcmABurlUZ8hs0YrpGUAYWgSWUSw6RXuPf1ZUK0l4REpV+sKYm/w==",
+      "path": "hangfire.memorystorage/1.7.0",
+      "hashPath": "hangfire.memorystorage.1.7.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication/2.2.0": {
       "type": "package",

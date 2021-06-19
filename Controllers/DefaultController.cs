@@ -39,7 +39,8 @@ namespace dotnet_webapi.Controllers
             // endpoints.Add(new Endpoints() { Name = "Business", Url_Endpoints = new Uri(HttpContext.Request.Host.ToString() + "/swagger") });
             // endpoints.Add(new Endpoints() { Name = "Categories", Url_Endpoints = new Uri(HttpContext.Request.Host.ToString() + "/swagger") });
             //  endpoints.Add(new Endpoints() { Name = "Swagger", Url_Endpoints = new Uri(HttpContext.Request.Host.ToString() + "/swagger") });
-            endpoints.Add(new Endpoints() { Name = "Swagger", Url_Endpoints = new Uri("https://dotnet-webapi.herokuapp.com/swagger/") });
+            endpoints.Add(new Endpoints() { Name = "Swagger", Summary = "Swagger UI", Url_Endpoints = new Uri("https://dotnet-webapi.herokuapp.com/swagger/") });
+             endpoints.Add(new Endpoints() { Name = "Swagger", Summary = "Hangfire DashBoard", Url_Endpoints = new Uri("https://dotnet-webapi.herokuapp.com/hangfire/") });
             endpoints.Add(new Endpoints() { Name = "Business", Summary = "Get/Post", Url_Endpoints = new Uri("https://dotnet-webapi.herokuapp.com/v1/business") });
             endpoints.Add(new Endpoints() { Name = "Business", Summary = "Get /v1/business/{id}", Url_Endpoints = new Uri("https://dotnet-webapi.herokuapp.com/v1/business/0") });
             endpoints.Add(new Endpoints() { Name = "Business", Summary = "Get /v1/business/categories/{id}", Url_Endpoints = new Uri("https://dotnet-webapi.herokuapp.com/v1/business/categories/1") });

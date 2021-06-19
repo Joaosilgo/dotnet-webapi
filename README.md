@@ -4,6 +4,9 @@
 dotnet add dotnet-webapi  package Microsoft.EntityFrameworkCore.InMemory --version 5.0.6
 dotnet add package Microsoft.AspNetCore.Authentication
 dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer
+dotnet add package Hangfire.Core --version 1.7.23
+dotnet add package Hangfire.AspNetCore --version 1.7.23
+dotnet add package Hangfire.MemoryStorage --version 1.7.0
 
 
 ````
@@ -19,7 +22,10 @@ dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer
 - [x] In-memory database provider for Entity Framework Core (to be used for testing purposes)
 - [x] Setting up Swagger (.NET Core) using the Authorization headers (Bearer)
 - [x] Autenticação e Autorização via Token (Bearer e JWT)
-- [ ] Update the website
+- [x] Setup Docker Container and Deploy in Heroku
+- [x] IncludeXmlComments in Swagger
+- [x] Hangfire Core to perform background processing/tasks and Jobs
+- [x] Override IDashboardAuthorizationFilter to CustomAuthorizationFilter to Return Hangfire DashBoard in Production (It was Protected By default)
 - [ ] Contact the media
   
 ## Docker
@@ -74,4 +80,29 @@ git branch -M main
 git remote add origin https://github.com/Joaosilgo/dotnet-webapi.git
 git push -u origin main
 
+````
+
+## Log Problems
+
+### Configuring Authorization
+
+"Hangfire Dashboard exposes sensitive information about your background jobs, including method names and serialized arguments as well as gives you an opportunity to manage them by performing different actions – retry, delete, trigger, etc. So it is really important to restrict access to the Dashboard.
+
+To make it secure by default, only local requests are allowed, however you can change this by passing your own implementations of the IDashboardAuthorizationFilter interface, whose Authorize method is used to allow or prohibit a request. The first step is to provide your own implementation."
+
+To fix the Dashboard view in Production we have to Make  
+
+````C#
+using Hangfire.Dashboard;
+
+namespace dotnet_webapi.Services
+{
+    public class CustomAuthorizationFilter : IDashboardAuthorizationFilter
+    {
+        public bool Authorize(DashboardContext context)
+        {
+            return true;//we can make a condition to just retrive if a certain User/Role is Logged 
+        }
+    }
+}
 ````

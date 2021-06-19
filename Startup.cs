@@ -6,6 +6,9 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using dotnet_webapi.Data;
+using dotnet_webapi.Services;
+using Hangfire;
+using Hangfire.MemoryStorage;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -34,6 +37,15 @@ namespace dotnet_webapi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+
+            services.AddHangfire(config =>
+            config.SetDataCompatibilityLevel(CompatibilityLevel.Version_170)
+            .UseSimpleAssemblyNameTypeSerializer()
+            .UseDefaultTypeSerializer()
+            .UseMemoryStorage()
+            );
+            services.AddHangfireServer();
 
             services.AddControllers();
 
@@ -162,7 +174,7 @@ namespace dotnet_webapi
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IBackgroundJobClient backgroundJobClient)
         {
             if (env.IsDevelopment())
             {
@@ -170,6 +182,10 @@ namespace dotnet_webapi
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "dotnet_webapi v1"));
             }
+
+            //  app.UseHangfireDashboard();
+            // backgroundJobClient.Enqueue(() => Console.WriteLine("Hello Hangfire Job!!"));
+
 
             app.UseSwagger();
             app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "dotnet_webapi v1"));
@@ -202,6 +218,12 @@ namespace dotnet_webapi
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                // endpoints.MapControllers();
+                app.UseHangfireDashboard("/hangfire", new DashboardOptions
+                {
+                    Authorization = new[] { new CustomAuthorizationFilter() }
+                });
+
             });
         }
     }

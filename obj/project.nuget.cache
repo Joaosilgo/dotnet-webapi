@@ -1,12 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "npoEYxatU/mz6jSd9Jeamp9wPxo7DUEjYKUDUVIzbWE6+1W8txUlMNRuOL0ibPv7eelYLA3FQVQy1SWVcwmzZw==",
+  "dgSpecHash": "r10vAbYSKe+nJueGR/moQqLCmSfrOyFld8hQ3sp8ZIU/OX0vUJJyytnLBAzdCp4shd9nWiuelvAPWc7Rdx1kkw==",
   "success": true,
   "projectFilePath": "C:\\Users\\joao2\\OneDrive\\Documentos\\dotnet_api\\dotnet-webapi\\dotnet-webapi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\joao2\\.nuget\\packages\\google.apis\\1.52.0\\google.apis.1.52.0.nupkg.sha512",
     "C:\\Users\\joao2\\.nuget\\packages\\google.apis.auth\\1.52.0\\google.apis.auth.1.52.0.nupkg.sha512",
     "C:\\Users\\joao2\\.nuget\\packages\\google.apis.core\\1.52.0\\google.apis.core.1.52.0.nupkg.sha512",
+    "C:\\Users\\joao2\\.nuget\\packages\\hangfire.aspnetcore\\1.7.23\\hangfire.aspnetcore.1.7.23.nupkg.sha512",
+    "C:\\Users\\joao2\\.nuget\\packages\\hangfire.core\\1.7.23\\hangfire.core.1.7.23.nupkg.sha512",
+    "C:\\Users\\joao2\\.nuget\\packages\\hangfire.memorystorage\\1.7.0\\hangfire.memorystorage.1.7.0.nupkg.sha512",
     "C:\\Users\\joao2\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\joao2\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\joao2\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.2.0\\microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",
