@@ -138,6 +138,20 @@ namespace dotnet_webapi.Controllers
 
 
 
+
+        /* 
+        [HttpPatch("update")]
+         public Task<ActionResult<Category>> Patch([FromBody] JsonPatchDocument<Category> categoryPatch)
+         {
+
+             categoryPatch.ApplyTo(_defaultCategory);
+             return _defaultCategory;
+         }
+         */
+
+
+
+
         /// <summary>
         /// Path Example in Category.
         /// </summary>
@@ -151,21 +165,10 @@ namespace dotnet_webapi.Controllers
         /// }
         ///
         /// </remarks>
-        /// <param name="categoryPatch"></param> 
+        /// <param name="id"></param>
+        /// <param name="patchCategoria"></param> 
 
-        /* 
-        [HttpPatch("update")]
-         public Task<ActionResult<Category>> Patch([FromBody] JsonPatchDocument<Category> categoryPatch)
-         {
-
-             categoryPatch.ApplyTo(_defaultCategory);
-             return _defaultCategory;
-         }
-         */
-
-        // VideoGameController.cs
-
-         [HttpPatch("{id}")]
+        [HttpPatch("{id}")]
         public async Task<ActionResult> Patch(int id, [FromBody] JsonPatchDocument<Category> patchCategoria)
         {
             if (patchCategoria == null)

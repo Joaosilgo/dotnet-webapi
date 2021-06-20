@@ -41,19 +41,47 @@ namespace dotnet_webapi.Controllers
 
 
 
+        /*
+                [AllowAnonymous]
+                [HttpPost("authenticate")]
+                public IActionResult Authenticate([FromBody] AuthenticateRequest data)
+                {
+                    GoogleJsonWebSignature.ValidationSettings settings = new GoogleJsonWebSignature.ValidationSettings();
+
+                    // Change this to your google client ID
+                    settings.Audience = new List<string>() { "652390042886-5dpn5dsusjin5ces7qm6hk4fc3atvcv8.apps.googleusercontent.com" };
+
+                    GoogleJsonWebSignature.Payload payload = GoogleJsonWebSignature.ValidateAsync(data.IdToken, settings).Result;
+                    return Ok(new { AuthToken = _jwtGenerator.CreateUserAuthToken(payload.Email) });
+                }
+
+                */
+
 
         [AllowAnonymous]
-        [HttpPost("authenticate")]
-        public IActionResult Authenticate([FromBody] AuthenticateRequest data)
+        [HttpPost]
+        [Route("authenticate/{token}")]
+        public async Task<IActionResult> Authenticate([FromRoute] string token)
         {
-            GoogleJsonWebSignature.ValidationSettings settings = new GoogleJsonWebSignature.ValidationSettings();
+            try
+            {
+                var googleUser = await GoogleJsonWebSignature.ValidateAsync(token, new GoogleJsonWebSignature.ValidationSettings()
+                {
+                    Audience = new[]{"652390042886-5dpn5dsusjin5ces7qm6hk4fc3atvcv8.apps.googleusercontent.com"}
 
-            // Change this to your google client ID
-            settings.Audience = new List<string>() { "652390042886-5dpn5dsusjin5ces7qm6hk4fc3atvcv8.apps.googleusercontent.com" };
+                }
+                );
 
-            GoogleJsonWebSignature.Payload payload = GoogleJsonWebSignature.ValidateAsync(data.IdToken, settings).Result;
-            return Ok(new { AuthToken = _jwtGenerator.CreateUserAuthToken(payload.Email) });
+                return Ok();
+
+            }
+            catch (Exception exception)
+            {
+
+                return BadRequest();
+           }
         }
+
 
         /// <summary>
         /// POST- Login in the system

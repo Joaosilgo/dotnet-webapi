@@ -60,7 +60,8 @@
              }
             
              </remarks>
-             <param name="categoryPatch"></param> 
+             <param name="id"></param>
+             <param name="patchCategoria"></param> 
         </member>
         <member name="M:dotnet_webapi.Controllers.DefaultController.Get">
             <summary>

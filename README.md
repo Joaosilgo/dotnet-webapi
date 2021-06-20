@@ -143,6 +143,13 @@ The patch documents are themselves JSON documents.
 ### How it works
 
 A JSON Patch document is just a JSON file containing an array of patch operations. The patch operations supported by JSON Patch are "add", "remove", "replace", "move", "copy" and "test". The operations are applied in order: if any of them fail then the whole patch operation should abort.
+
+## CACHE
+
+>"A distributed cache is a cache shared by multiple app servers, typically maintained as an external service to the app servers that access it. A distributed cache can improve the performance and scalability of an ASP.NET Core app, especially when the app is hosted by a cloud service or a server farm."...
+>..."Caching solutions usually rely on in-memory storage to provide fast retrieval of cached data, but memory is a limited resource and costly to expand. Only store commonly used data in a cache.
+>Generally, a Redis cache provides higher throughput and lower latency than a SQL Server cache. However, benchmarking is usually required to determine the performance characteristics of caching strategies."
+
 ___
 
 ## Testing
