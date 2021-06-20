@@ -15,12 +15,15 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Distributed;
+using Microsoft.Extensions.Caching.StackExchangeRedis;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using StackExchange.Redis;
 
 
 namespace dotnet_webapi
@@ -38,7 +41,7 @@ namespace dotnet_webapi
         public void ConfigureServices(IServiceCollection services)
         {
 
-
+            
             services.AddHangfire(config =>
             config.SetDataCompatibilityLevel(CompatibilityLevel.Version_170)
             .UseSimpleAssemblyNameTypeSerializer()
@@ -60,10 +63,15 @@ namespace dotnet_webapi
                 c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());
             });
 
+
+
+
             services.AddDbContext<DataContext>(opt => opt.UseInMemoryDatabase("Database"));
             // services.AddDbContext<DataContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("connectionString")));   
 
             services.AddScoped<DataContext, DataContext>();
+
+
 
             services.AddSwaggerGen(c =>
             {
@@ -186,6 +194,19 @@ namespace dotnet_webapi
                     });
 
             */
+
+
+            services.AddStackExchangeRedisCache(options =>
+                    {
+                        var tokens = "redis://:p5c8d3e453fdd99c70b60e5f04fb6c370df626d6533190d4307d40d328efd55b8@ec2-54-205-158-101.compute-1.amazonaws.com:9310".Split(':', '@');
+                        options.ConfigurationOptions = ConfigurationOptions.Parse(string.Format("{0}:{1},password={2}", tokens[3], tokens[4], tokens[2]));
+                     //   options.Configuration = "ec2-54-205-158-101.compute-1.amazonaws.com:9310,password=p5c8d3e453fdd99c70b60e5f04fb6c370df626d6533190d4307d40d328efd55b8";
+                
+                        options.InstanceName = "SampleInstance";
+                        // options.Configuration = "redis://:p5c8d3e453fdd99c70b60e5f04fb6c370df626d6533190d4307d40d328efd55b8@ec2-54-205-158-101.compute-1.amazonaws.com:9310";
+                  
+                
+                    });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
