@@ -22,6 +22,14 @@ ___
 
 ## Postman
 
+![Postman](https://www.postman.com/assets/logos/pm-orange-logo-horiz.svg)
+
+## Github
+
+![Github](https://images.unsplash.com/photo-1566241440091-ec10de8db2e1?ixid=MnwyMjIwNDh8MHwxfGNvbGxlY3Rpb258MXwzY1hKR09YdkpZOHx8fHx8Mnx8MTYyNDE0ODcyMA&ixlib=rb-1.2.1)
+
+GitHub é uma plataforma de hospedagem de código-fonte e arquivos com controle de versão usando o Git. Ele permite que programadores, utilitários ou qualquer usuário cadastrado na plataforma contribuam em projetos privados e/ou Open Source de qualquer lugar do mundo.
+
 ## DbInitializer
 
 ## Swagger
@@ -158,7 +166,7 @@ ___
 
 ## 1.0   Configuring Authorization
 
-"Hangfire Dashboard exposes sensitive information about your background jobs, including method names and serialized arguments as well as gives you an opportunity to manage them by performing different actions – retry, delete, trigger, etc. So it is really important to restrict access to the Dashboard.
+>"Hangfire Dashboard exposes sensitive information about your background jobs, including method names and serialized arguments as well as gives you an opportunity to manage them by performing different actions – retry, delete, trigger, etc. So it is really important to restrict access to the Dashboard.
 
 To make it secure by default, only local requests are allowed, however you can change this by passing your own implementations of the IDashboardAuthorizationFilter interface, whose Authorize method is used to allow or prohibit a request. The first step is to provide your own implementation."
 
@@ -181,7 +189,7 @@ namespace dotnet_webapi.Services
 
 ## 2.0  JSON Patch and Swagger
 
-"Swashbuckle.AspNetCore doesn't work propertly with this type JsonPatchDocument, which doesn’t represent the expected patch request doument."
+>"Swashbuckle.AspNetCore doesn't work propertly with this type JsonPatchDocument, which doesn’t represent the expected patch request doument."
 
 You need to custome a document filter to modify the generated specification.
 
