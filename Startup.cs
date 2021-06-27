@@ -4,13 +4,16 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+
 using System.Threading.Tasks;
 using dotnet_webapi.Data;
 using dotnet_webapi.Services;
+using dotnet_webapi.Services.HealthCheck;
 using Hangfire;
 using Hangfire.MemoryStorage;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
@@ -23,8 +26,9 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Newtonsoft.Json;
 using StackExchange.Redis;
-
+using Microsoft.AspNetCore.Http;
 
 namespace dotnet_webapi
 {
@@ -41,7 +45,7 @@ namespace dotnet_webapi
         public void ConfigureServices(IServiceCollection services)
         {
 
-            
+
             services.AddHangfire(config =>
             config.SetDataCompatibilityLevel(CompatibilityLevel.Version_170)
             .UseSimpleAssemblyNameTypeSerializer()
@@ -200,13 +204,17 @@ namespace dotnet_webapi
                     {
                         var tokens = "redis://:p5c8d3e453fdd99c70b60e5f04fb6c370df626d6533190d4307d40d328efd55b8@ec2-54-205-158-101.compute-1.amazonaws.com:9310".Split(':', '@');
                         options.ConfigurationOptions = ConfigurationOptions.Parse(string.Format("{0}:{1},password={2}", tokens[3], tokens[4], tokens[2]));
-                     //   options.Configuration = "ec2-54-205-158-101.compute-1.amazonaws.com:9310,password=p5c8d3e453fdd99c70b60e5f04fb6c370df626d6533190d4307d40d328efd55b8";
-                
+                        //   options.Configuration = "ec2-54-205-158-101.compute-1.amazonaws.com:9310,password=p5c8d3e453fdd99c70b60e5f04fb6c370df626d6533190d4307d40d328efd55b8";
+
                         options.InstanceName = "SampleInstance";
                         // options.Configuration = "redis://:p5c8d3e453fdd99c70b60e5f04fb6c370df626d6533190d4307d40d328efd55b8@ec2-54-205-158-101.compute-1.amazonaws.com:9310";
-                  
-                
+
+
                     });
+
+
+            services.AddHealthChecks()
+            .AddDbContextCheck<DataContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -250,6 +258,7 @@ namespace dotnet_webapi
             //   app.UseAuthorization();
 
 
+
             app.UseDefaultFiles();
             app.UseStaticFiles();
 
@@ -268,6 +277,34 @@ namespace dotnet_webapi
             backgroundJobClient.Enqueue(() => Console.WriteLine("This is  Hangfire Job!! :)"));
             // 
             recurringJobManager.AddOrUpdate("Run Every Minute", () => Console.WriteLine("This is Recurring Hangfire Job!! :)"), Cron.Daily);
+
+            //HealthCheck
+            app.UseHealthChecks("/health", new HealthCheckOptions
+            {
+                ResponseWriter = async (context, report) =>
+                {
+                    context.Response.ContentType = "application/json";
+
+                    var response = new HealthCheckResponse
+                    {
+                        Status = report.Status.ToString(),
+                        checks = report.Entries.Select(x => new HealthCheck
+                        {
+                            Component = x.Key,
+                            Status = x.Value.Status.ToString(),
+                            Description = x.Value.Description
+                        }),
+
+                        Duration = report.TotalDuration
+                    };
+
+                    await context.Response.WriteAsync(JsonConvert.SerializeObject(response));
+                }
+
+            });
+
+            //HealthCheck
+
         }
     }
 }

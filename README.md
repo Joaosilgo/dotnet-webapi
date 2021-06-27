@@ -13,6 +13,7 @@ dotnet add package Hangfire.AspNetCore --version 1.7.23
 dotnet add package Hangfire.MemoryStorage --version 1.7.0
 dotnet add package Microsoft.AspNetCore.Mvc.NewtonsoftJson --version 5.0.7
 dotnet add package Microsoft.Extensions.Caching.StackExchangeRedis --version 5.0.1
+dotnet add package Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore --version 5.0.7
 
 
 ````
@@ -170,6 +171,8 @@ services.AddStackExchangeRedisCache(options =>
 ````
 
 ___
+
+## Health Checks
 
 ## Testing
 

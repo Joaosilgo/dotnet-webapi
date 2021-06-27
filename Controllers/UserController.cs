@@ -26,6 +26,7 @@ namespace dotnet_webapi.Controllers
     public class UserController : Controller
     {
 
+/*
         public class AuthenticateRequest
         {
             [Required]
@@ -39,7 +40,7 @@ namespace dotnet_webapi.Controllers
             _jwtGenerator = new JwtGenerator(configuration.GetValue<string>("JwtPrivateSigningKey"));
         }
 
-
+*/
 
         /*
                 [AllowAnonymous]
