@@ -69,6 +69,13 @@
             </summary>
             <returns>Objeto contendo valores url de todos os EndPoints.</returns>
         </member>
+        <member name="M:dotnet_webapi.Controllers.OTAController.SendArchive(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Upload a firmware .bin file.
+            </summary>
+            <param name="file"></param>
+            <returns></returns>
+        </member>
         <member name="M:dotnet_webapi.Controllers.UserController.Authenticate(dotnet_webapi.Models.User,dotnet_webapi.Data.DataContext)">
             <summary>
             POST- Login in the system
