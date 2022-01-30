@@ -21,7 +21,7 @@ namespace dotnet_webapi
             //  CreateHostBuilder(args).Build().Run();
 
             //configure logging first
-            ConfigureLogging();
+            //ConfigureLogging();
 
             var host = CreateHostBuilder(args).Build();
 
@@ -96,6 +96,11 @@ namespace dotnet_webapi
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+                    webBuilder.UseUrls("http://*:" + Environment.GetEnvironmentVariable("PORT")); 
+
+
+                    
+
                 }).ConfigureAppConfiguration(configuration =>
                 {
                     configuration.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
