@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Web;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.JsonPatch;
+using Microsoft.Extensions.Logging;
 
 namespace dotnet_webapi.Controllers
 {
@@ -20,6 +21,13 @@ namespace dotnet_webapi.Controllers
     [EnableCors]
     public class DefaultController : ControllerBase
     {
+        private readonly ILogger<DefaultController> _logger;
+
+        public DefaultController(ILogger<DefaultController> logger)
+        {
+            _logger = logger;
+        }
+
         /// <summary>
         /// Dá-nos a informação de todos os endpoints da API
         /// </summary>
@@ -57,7 +65,7 @@ namespace dotnet_webapi.Controllers
             endpoints.Add(new Endpoints() { Name = "Template", Url_Endpoints = new Uri("https://dotnet-webapi.herokuapp.com/WeatherForecast") });
 
 
-
+            _logger.LogInformation(message: "Hello Default Routes");
             return Enumerable.Range(1, 1).Select(index => new Default
             {
                 Name = "Default Page",
@@ -68,6 +76,9 @@ namespace dotnet_webapi.Controllers
 
             })
            .ToArray();
+
+
+           
         }
 
 

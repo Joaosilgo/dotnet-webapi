@@ -29,6 +29,7 @@ namespace dotnet_webapi.Controllers
         //   [Route("/")]
         public IEnumerable<WeatherForecast> Get()
         {
+            _logger.LogInformation(message: "WeatherForecast");
             var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {

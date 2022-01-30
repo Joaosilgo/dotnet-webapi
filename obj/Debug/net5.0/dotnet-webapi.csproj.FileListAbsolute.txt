@@ -65,7 +65,6 @@ C:\Users\joao2\OneDrive\Documentos\dotnet_api\dotnet-webapi\obj\Debug\net5.0\dot
 C:\Users\joao2\OneDrive\Documentos\dotnet_api\dotnet-webapi\obj\Debug\net5.0\dotnet-webapi.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\joao2\OneDrive\Documentos\dotnet_api\dotnet-webapi\obj\Debug\net5.0\dotnet-webapi.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\joao2\OneDrive\Documentos\dotnet_api\dotnet-webapi\obj\Debug\net5.0\staticwebassets\dotnet-webapi.StaticWebAssets.Manifest.cache
-C:\Users\joao2\OneDrive\Documentos\dotnet_api\dotnet-webapi\obj\Debug\net5.0\staticwebassets\dotnet-webapi.StaticWebAssets.xml
 C:\Users\joao2\OneDrive\Documentos\dotnet_api\dotnet-webapi\obj\Debug\net5.0\scopedcss\bundle\dotnet-webapi.styles.css
 C:\Users\joao2\OneDrive\Documentos\dotnet_api\dotnet-webapi\obj\Debug\net5.0\dotnet-webapi.RazorTargetAssemblyInfo.cache
 C:\Users\joao2\OneDrive\Documentos\dotnet_api\dotnet-webapi\obj\Debug\net5.0\dotnet-webapi.csproj.CopyComplete
@@ -111,3 +110,19 @@ C:\Users\joao2\OneDrive\Documentos\dotnet_api\dotnet-webapi\bin\Debug\net5.0\Mic
 C:\Users\joao2\OneDrive\Documentos\dotnet_api\dotnet-webapi\bin\Debug\net5.0\Microsoft.Extensions.Diagnostics.HealthChecks.dll
 C:\Users\joao2\OneDrive\Documentos\dotnet_api\dotnet-webapi\bin\Debug\net5.0\Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll
 C:\Users\joao2\OneDrive\Documentos\dotnet_api\dotnet-webapi\bin\Debug\net5.0\Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore.dll
+C:\Users\joao2\OneDrive\Documentos\dotnet_api\dotnet-webapi\bin\Debug\net5.0\Elasticsearch.Net.dll
+C:\Users\joao2\OneDrive\Documentos\dotnet_api\dotnet-webapi\bin\Debug\net5.0\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\joao2\OneDrive\Documentos\dotnet_api\dotnet-webapi\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\joao2\OneDrive\Documentos\dotnet_api\dotnet-webapi\bin\Debug\net5.0\Serilog.dll
+C:\Users\joao2\OneDrive\Documentos\dotnet_api\dotnet-webapi\bin\Debug\net5.0\Serilog.AspNetCore.dll
+C:\Users\joao2\OneDrive\Documentos\dotnet_api\dotnet-webapi\bin\Debug\net5.0\Serilog.Enrichers.Environment.dll
+C:\Users\joao2\OneDrive\Documentos\dotnet_api\dotnet-webapi\bin\Debug\net5.0\Serilog.Extensions.Hosting.dll
+C:\Users\joao2\OneDrive\Documentos\dotnet_api\dotnet-webapi\bin\Debug\net5.0\Serilog.Extensions.Logging.dll
+C:\Users\joao2\OneDrive\Documentos\dotnet_api\dotnet-webapi\bin\Debug\net5.0\Serilog.Formatting.Compact.dll
+C:\Users\joao2\OneDrive\Documentos\dotnet_api\dotnet-webapi\bin\Debug\net5.0\Serilog.Formatting.Elasticsearch.dll
+C:\Users\joao2\OneDrive\Documentos\dotnet_api\dotnet-webapi\bin\Debug\net5.0\Serilog.Settings.Configuration.dll
+C:\Users\joao2\OneDrive\Documentos\dotnet_api\dotnet-webapi\bin\Debug\net5.0\Serilog.Sinks.Console.dll
+C:\Users\joao2\OneDrive\Documentos\dotnet_api\dotnet-webapi\bin\Debug\net5.0\Serilog.Sinks.Debug.dll
+C:\Users\joao2\OneDrive\Documentos\dotnet_api\dotnet-webapi\bin\Debug\net5.0\Serilog.Sinks.Elasticsearch.dll
+C:\Users\joao2\OneDrive\Documentos\dotnet_api\dotnet-webapi\bin\Debug\net5.0\Serilog.Sinks.File.dll
+C:\Users\joao2\OneDrive\Documentos\dotnet_api\dotnet-webapi\bin\Debug\net5.0\Serilog.Sinks.PeriodicBatching.dll
